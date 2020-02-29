@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "7分甜",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "i-cell-group": "../../assistant/dist/cell-group/index",
+    "i-cell": "../../assistant/dist/cell/index"
+  }
+}

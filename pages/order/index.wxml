@@ -1,0 +1,89 @@
+<view class="box">
+  <view class="flex address a-item">
+    <view>7分甜</view>
+    <view class="shop">{{minShop.shopName}}</view>
+    <view class="change">换门店</view>
+  </view>
+  <view class="phone flex">
+    <view class="tel">电话：(025) 86402227</view>
+    <view class="local">地址:江苏省南京市软件大道109号雨花</view>
+  </view>
+  <view class="iconfont icon-arrow-right-copy-copy arrow_right"></view>
+</view>
+
+<!-- 内容 -->
+<view class="content flex">
+  <scroll-view scroll-y class="left_menu">
+    <view class="flex a-item j-ceter">
+      <view class="iconfont icon-tubiao-"></view>
+      <view class="srearch a-item j-ceter">快速搜索</view>
+    </view>
+    <view class="hotsel {{index===activeIndex?'active':''}}" bindtap="changeMenu" data-index="{{index}}" wx:for='{{menu}}' wx:key='name'>
+      <image src="{{item.img}}"></image>
+      <view>{{item.menuname}}</view>
+    </view>
+  </scroll-view>
+  <view class="right_content">
+    <view class="banner_bg">
+      <image class="banner" src="http://47.99.160.107/img/images/1%20(50).png"></image>
+    </view>
+    <view class="neirong">
+      <view class="title">{{littletitle}}</view>
+      <scroll-view scroll-y>
+        <view class="goodlist flex" wx:for='{{goodslist}}' wx:key='name'>
+        <image class="goods" src="{{item.img}}"></image>
+        <view class="goods_right flex j-space">
+          <view class="goodsname">{{item.name}}</view>
+          <view class="desc">{{item.desc}}</view>
+          <view class="price">￥ {{item.price}}</view>
+          <view class="add" bindtap="add" data-id="{{item.id}}" data-index="{{index}}">+</view>
+        </view>
+      </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>
+
+
+<!-- 加入购物车 -->
+<view class="boxcart" wx:if="{{showadv}}">
+  <view class="close" bindtap="close">X</view>
+  <view class="detail">
+    <view class="good_detail">
+      <view class="bg flex">
+        <image class="img" src='{{good.img}}'></image>
+        <view class="production">
+          <view class="good_detail_goodsname">{{good.name}}</view>
+          <view class="good_detail_desc">{{good.desc}}</view>
+          <view>￥{{good.price}}</view>
+        </view>
+        <view class="right">
+          <view class="mus" bindtap="mus" data-id="{{item.id}}">-</view>
+          <input disabled="true" value="1"></input>
+          <view class="plus" bindtap="plus " data-id="{{item.id}}">+</view>
+        </view>
+      </view>
+    </view>
+    <!-- 规格 -->
+    <view style="padding:20rpx;">
+      <view class="guige">规格：</view>
+      <view class="flex">
+        <view class="guige_item1" style="margin-right:20rpx;">摩摩喳喳（中）</view>
+        <view class="guige_item1 activeguige">摩摩喳喳（大）</view>
+      </view>
+    </view>
+    <view style="padding:20rpx;" class="wendu">
+      <view class="guige">温度：</view>
+      <view>
+        <view class="guige_item1">热</view>
+        <view class="guige_item1">去冰</view>
+        <view class="guige_item1">温</view>
+        <view class="guige_item1">常温</view>
+      </view>
+    </view>
+    <view style="padding:30rpx;margin-top:300rpx;">
+      <button class="btn">确定</button>
+    </view>
+
+  </view>
+</view>

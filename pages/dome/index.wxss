@@ -1,0 +1,6 @@
+.box{
+  padding: 10rpx;
+}
+.box2{
+  display: flex;
+}

@@ -1,0 +1,11 @@
+<view class="box">
+  <view wx:for='{{userlist}}' wx:key='name'>
+    {{index+1}} ---- {{item}}
+    <view class="box2">
+      <button bindtap="up" data-index="{{index}}" wx:if='{{index>0}}'>向上</button>
+      <button bindtap="down" data-index="{{index}}" wx:if='{{index<userlist.length-1}}'>向下</button>
+      <button bindtap="remove" data-index="{{index}}">删除</button>
+    </view>
+  </view>
+
+</view>
